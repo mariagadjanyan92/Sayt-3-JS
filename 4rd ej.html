@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="JS Sayt.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+.nav{
+    width: 100%;
+    height: 65px;
+    line-height: 65px;
+    text-align: center;
+    background: white;
+    z-index: +1;
+    position: fixed;
+}
+
+.nav div.main_list{
+    width:100%;
+    height: 65px;
+    box-shadow: 0px 0px 10px 0px grey;
+}
+
+.nav div.main_list ul{
+    width:100%;
+    height: 65px;
+    display: flex;
+    list-style: none;
+}
+
+.nav div.main_list ul li{
+    width: 160px;
+    height: 65px;
+}
+
+.nav div.main_list ul li a{
+    text-decoration: none;
+    color:black;
+    font-family: 'Gabriola';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 51px;
+}
+
+
+.nav div.main_list ul li a:hover{
+    color: #c0c0c0;
+}
+
+.nav div.media_button {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    display: none;
+}
+
+.nav div.media_button button.main_media_button {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.nav div.media_button button.main_media_button span{
+    width: 98%;
+    height: 1px;
+    display: block;
+    background-color: #fff;
+    margin-top: 9px;
+    margin-bottom: 10px;
+}
+
+.nav div.media_button button.main_media_button:hover span:nth-of-type(1){
+     transform: rotateY(180deg);
+    transition: all 0.5s; 
+     background-color: #c0c0c0; 
+}
+ 
+.nav div.media_button button.main_media_button:hover span:nth-of-type(2){
+    transform: rotateY(180deg);
+    transition: all 0.4s;
+    background-color: #c0c0c0;
+}
+
+.nav div.media_button button.main_media_button:hover span:nth-of-type(3){
+    transform: rotateY(180deg);
+    transition: all 0.3s;
+    background-color: #c0c0c0;
+}
+
+  .nav div.media_button button.active span:nth-of-type(1) {
+    transform: rotate3d(0, 0, 1, 45deg);
+    position: absolute;
+    margin: 0;
+}  
+
+ .nav div.media_button button.active span:nth-of-type(2) {
+    display: none;
+} 
+ .nav div.media_button button.active span:nth-of-type(3) {
+    transform: rotate3d(0, 0, 1, -45deg);
+    position: absolute;
+    margin: 0;
+}
+
+.nav div.media_button button.active:hover span:nth-of-type(1) {
+    transform: rotate3d(0, 0, 1, 20deg);
+}
+
+.nav div.media_button button.active:hover span:nth-of-type(3) {
+    transform: rotate3d(0, 0, 1, -20deg);
+}  
+.ul_2{
+    text-decoration: none;
+    color: black;
+    font-family: 'Gabriola';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 51px;
+}
+#i2{
+    width: 150px;
+}
+.emptydiv{
+    width: 100%;
+    height: 65px;
+}
+#dv1{
+    width: 100%;
+    height: 1650px;
+    display: flex;
+    flex-direction: row;
+ 
+}
+#dv2{
+    width: 30%;
+    height: 1650px;
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+}
+#container3{
+    width: 202px;
+    height: 30px;
+}
+#range{
+    width: 209px;
+    
+}
+#price{
+    width: 340px;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+#inp_1{
+    height: 60px;
+}
+#inp_1_1{
+    width: 98px;
+    height: 30px;
+    outline: none;
+}
+#inp_1_2{
+    width: 98px;
+    height: 30px;
+    outline: none;
+}
+.type{
+    width: 200px;
+    height: 40px;
+    font-size: 22px;
+
+}
+.inp_2{
+    width: 200px;
+    height: 130px;
+}
+
+#dv3{
+    width: 70%;
+    height: 900px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.d1{
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+#container2{
+    width: 100%;
+    height: 100px;
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#container_2div{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: row;
+}
+#x_container{
+    display: none;
+}
+#container1{
+    width: 90%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-bottom: 1px solid grey;
+}
+
+@media screen and (min-width: 250px) and (max-width: 768px) {
+    
+  
+    
+    .nav div.main_list{
+        width: 100%;
+        margin-top: 65px;
+        height: 0px;
+        overflow: hidden;
+    }
+    
+    .nav div.show_list{
+        height: 200px;
+    }
+    
+    .nav div.main_list ul{
+        flex-direction: column;
+        width: 100%;
+        height: 200px;
+        top: 80px;
+        right: 0;
+        left: 0;
+    }
+    
+    .nav div.main_list ul li{
+        width: 100%;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.6)
+    }
+    
+    .nav div.main_list ul li a{
+      text-align: center;
+        line-height: 40px;
+        width: 100%;
+        height: 40px;
+        display: table;
+    }
+
+    
+    .nav div.media_button{
+        display: block;
+    }
+    #dv1{
+        flex-direction: column;
+    }
+    #dv2{
+        width: 100%;
+    }
+    #container_2div{
+        flex-direction: column;
+    }
+}
+    </style>
+</head>
+<body>
+    
+            
+            <nav class="nav">
+        
+            <div class="main_list" id="mainListDiv">
+                <ul>
+                    <li><a href="JS Sayt.html">Brands</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Special offers</a></li>
+                    <li><a href="#">B2B offers</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <ul id="i2">
+                   <li> <i class="fa fa-search" style="font-size:21px"></i></li>
+                   <li>
+                    <a href="LOGIN.html">
+                    <i class="fa fa-user-o" style="font-size:21px">
+                    </i>
+                    </a>
+                </li>
+                   <li><i class="fa fa-cart-plus" aria-hidden="true"style="font-size:21px"></i></li>
+<li id="oo"></li>
+                </ul>
+</ul>
+            </div>
+            <div class="media_button">
+                <button class="main_media_button" id="mediaButton">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            
+        
+
+    </nav>
+    <div class="emptydiv"></div>
+<div id="container_2div"></div>
+<div id="container_3div"></div>
+    <div id="dv1">
+        <div id="dv2">
+        <p id="container2">Home>Products>Red wines</p>
+<p id="container3">Price</p>
+<input type="range" id="range" oninput="f1()" min="0" max="999" value="3" />
+<div id="price">
+    <div id="price1">3$</div>
+    <div id="price2">999$</div>
+</div>
+<div id="inp_1">
+    <input type="text" id="inp_1_1"oninput="f2()" placeholder="form to 3.00$" />
+    <input type="text" id="inp_1_2" placeholder=" to 999.00$" />
+</div>
+<p class="type">Type</p>
+<div class="inp_2">
+<input type="checkbox"  value="Bike">
+<label> Dry</label><br>
+<input type="checkbox" value="Bike">
+<label> Fruit</label><br>
+<input type="checkbox"  value="Bike">
+<label> Semi sweet</label><br>
+<input type="checkbox"  value="Bike">
+<label> Sweet</label><br>
+</div>
+<p class="type">Brend</p>
+<div class="inp_2">
+<input type="checkbox"  value="Bike">
+<label>Vedi Alco</label><br>
+<input type="checkbox"  value="Bike">
+<label> Karas</label><br>
+<input type="checkbox"  value="Bike">
+<label> Zarah</label><br>
+<input type="checkbox"  value="Bike">
+<label> Armenia wines</label><br>
+<input type="checkbox"  value="Bike">
+<label> Tushpa</label><br>
+<input type="checkbox"  value="Bike">
+<label> Areni</label><br>
+<input type="checkbox"  value="Bike">
+<label> Koor</label><br>
+</div>
+</div>
+<div id="dv3"></div>
+    </div>
+
+<script>
+
+  let arr=[
+    {
+        name:"“Armenia” white dry wine", 
+        persent: "Alc 55% 0.75l",
+        url: "wino1.png",
+       img:"http://anemonsalon.com/341-large_default/armenia-white-075l.jpg",
+        oldprice:"3.59",
+        sale:"10%",
+        icon:"data:image/png;base64,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",
+    article1:"Article",
+    article2:"000123",
+    country1:"Country",
+    country2:"Armenia",
+    region1:"Region",
+    region2:"Armenia",
+     manufacturer1:"Manufacturer",
+    manufacturer2:"Areni",
+    color:"color white",
+    type:"Type dry",
+    Volume:"Valume 750ml",
+    Alkohol:"Alcohol 55%",
+    price:"5,99",
+    Description:"Description",
+    text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",   
+    },
+    {
+    name:"“Armenia” rose sweet wine", 
+    persent: "Alc 55% 0.75l",
+    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ZeCS8J0k9prNwewABXZ0Vkak42bTD31WQ31HNYdb-scWQlqo2w_vPV4ccbVO9UukCOo&usqp=CAU",
+    img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzoXJyWfifxeOvojKyYv9150ja2KmZv0aRYs4uG6URba0enk9utFlo3P3yKeQVPsFQbcc&usqp=CAU",
+    oldprice:" ",
+    sale:"",
+    icon:"data:image/png;base64,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",
+    line:"",
+    article1:"Article",
+    article2:"000123",
+    country1:"Country",
+    country2:"Armenia",
+    region1:"Region",
+    region2:"Armenia",
+     manufacturer1:"Manufacturer",
+    manufacturer2:"Areni",
+    color:"color rose",
+    type:"Type Sweet",
+    Volume:"Valume 750ml",
+    Alkohol:"Alcohol 55%",
+    price:"6,75",
+    Description:"Description",
+    text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",   
+    },
+    {
+    name:"“Koor” red sweet wine", 
+    persent: "Alc 55% 0.75l",
+    url: "wino3.png",
+    img:"https://s3-alpha-sig.figma.com/img/3b9f/21bd/43586d651bf5a7f41f2acccd01a31382?Expires=1675641600&Signature=q8j68NmuuNZZKiXrjfnxqzz14rmA-nPvav0PkAAtwhVbp6i-WFXrOZJVuvWeBuFCyuRn1CIq1Kyqinly~Azt0UqokEDr59utRoVrWv~7aimCP9s~QKRpZ1gkjfoj7fGtQAYKXyuesoR57CPb1bo0S0dqF4cxHaoNitpzTbZW30TMf8YRaoCjOJXr1OCxYdyDnR0849b9Mt4Eh2GR4deT5E35apIP3eAMZ3t8SAsbMn67W-qNX09eg8MJcV7-xYiFy3azz44z3W66Eze4TvYipTHGSKu7RrtY8FSv6y-LrCi2MYL0ksOMXnG7nBZ~1VCEE9zMCcYJFsIFcdn1khPOVQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    oldprice:"9,55 ",
+    sale:"10%",
+    icon:"data:image/png;base64,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",
+    article1:"Article",
+    article2:"000123",
+    country1:"Country",
+    country2:"Armenia",
+    region1:"Region",
+    region2:"Armenia",
+     manufacturer1:"Manufacturer",
+    manufacturer2:"Areni",
+    color:"color red",
+    type:"Type Sweet",
+    Volume:"Valume 750ml",
+    Alkohol:"Alcohol 55%",
+    price:"7,50",
+    Description:"Description",
+    text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",   
+    },
+    {
+        name:"“Armenia” pomegrante", 
+        persent: "Alc 55% 0.75l",
+        url: "wino4.png",
+       img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDfGX58VFogh3Khg7SbBPWc6DQVs4EMz7Rd7_klfrhGQff4a5TUJKYhs7zKNahfk-NpL0&usqp=CAU",
+        oldprice:"9,55 ",
+        sale:"10%",
+         icon:"data:image/png;base64,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",
+         article1:"Article",
+    article2:"000123",
+    country1:"Country",
+    country2:"Armenia",
+    region1:"Region",
+    region2:"Armenia",
+     manufacturer1:"Manufacturer",
+    manufacturer2:"Areni",
+    color:"color red",
+    type:"Type Sweet",
+    Volume:"Valume 750ml",
+    Alkohol:"Alcohol 55%",
+    price:"7,50",
+    Description:"Description",
+    text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",   
+    },
+    //2rd zangvac
+{
+    name:"“Karas” red wine", 
+    persent: "Alc 55% 0.75l",
+    url: "wino5.png",
+    oldprice:"3.59",
+     sale:"10%",
+     img:"data:image/jpeg;base64,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",
+      icon:"data:image/png;base64,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",
+      article1:"Article",
+    article2:"000123",
+    country1:"Country",
+    country2:"Armenia",
+    region1:"Region",
+    region2:"Armenia",
+     manufacturer1:"Manufacturer",
+    manufacturer2:"Areni",
+    color:"color red",
+    type:"Type dry",
+    Volume:"Valume 750ml",
+    Alkohol:"Alcohol 55%",
+    price:"5,99",
+    Description:"Description",
+    text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",   
+    },
+    {
+        name:"“Zorah” white dry wine", 
+        persent: "Alc 55% 0.75l",
+        url: "wino6.png",
+       oldprice:" ",
+        sale:"",
+        line:"",
+        img:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxETERISEBIVFRIWFRYQFxIVFw8SFRUVFhgWFxUVFRUYHiggGBomGxUVITEhJSkrLi4uGB8zODMsNygtLisBCgoKDg0OGhAQGi0lHSUrLSstLS0tLi0tLS0tLS0uLS0tLSs3Ky0tLSsrLS0tLS01LS0tLS0tLSstLSstLSstLf/AABEIAQkAvgMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABQYEBwgDAgH/xABOEAABAwIDAwgFBgcOBwAAAAABAAIDBBEFEiEGMUEHEyIyUWFxsXKBkaHBFCOCktHSM0JTYqKy4QgXJCU0Q0RSVGSDk8LDFVVjc3Sz0//EABoBAQADAQEBAAAAAAAAAAAAAAABBAUCAwb/xAAnEQEAAgIBAwQCAgMAAAAAAAAAAQIDEQQhMaESIkHRBVGBwRUyUv/aAAwDAQACEQMRAD8A3iiIgIiICIiAiIgIiIK1tbtA+nLY4QOccMxcdco3Cw7Trv7FXosUqn6unf8AROT9Wy8tsHXrZL8AwDwyg/Er8orWXEy9IiNJOCom389J9dx9xKkcPxmZr2tlIcwkC5ADhfS9xoQsCnIX5UgJ1TqF4RecB6Lb9g8l6Lt5CIiAiIgIiICIiAiIgIiICIiAiIgIiIKLt3StE8bxve3X6JsD7D7lhUDdFI7fH52H0XeYWBh+5eVu73p2S1PELbl9CmDnsadxcB7SvqnGi9YvwsfpN8woSswREXsriIiAiIgIiICIiAiIgIiICIiAiIgIiIKRygtIkgdbTK4cOBH2qJoaiw1CmeUe5EABtcSajh1NVToqU3aTI7QtNhe3RdG62pO/JY9ziq17e6Vmke2GwaCmc5oIt71j1dUIqinjeCTJIGNI3A79b8F64LQO+Txs51/Rj5vMOsRly3drq7cb9o71g4/Dapw+5JyzsFzvO/Urr4hHzK6oiL3VxERAREQEREBERAREQEREBERAREQEREGp+XDGZ4X0jICwFzZSS5pcd7ALa+PBa2bX4u7VtTEB2ZGD/bPmrdy+VJFbStDS7LCXWFvxnn7qqFHiUgGlLKfqfas7lZMlZ9mv51/a/gpS1Y9W/Kx4HjuNhvSrGWGgGSE7v8L4r5pds65+LUFPUSMewzROJ5tjDcuI0LbLxwfEHlhvTTN17GH4qu1spZi1DM5j2NEsBOYW3TG/uXfGyXv/AL68IzY6Vj278uqURFeURERAREQEREBERAREQEREBERAREQEREHPfK7U85i7xwjjij9di8/rrFoRoo7aWr57EqqXg6d9vBpyj3NUnSDRYPPtuWzxo1CZwvcfFVHlFu0wvG9tyPFrgfirZhfFV3lEhvCw9jnD2gfYnBnrDrkRusukKCoEkUcg3PY14Pc4A/Fe6qvJbiHP4TRPvciIRHxiJj/0q1Ldhiz3ERFKBERAREQEREBERAREQEREBERAUbtHiAp6SomP4kT3Dxt0ffZSS1zy4YrzdCyAHpTyWPoM6TvflXN51WZd0jdohpPD7l1zvJufE71Z6bcq9hTeKscA0Xz3Ln3NrDHRJ4Zx9SwNs4c1M/uc0+Y+Kz8M4+r4r9xuHNBKPzCfWNfgnFnScsbhO/ud8Tz0U9MTrDNmA/MkF/1mu9q2wub+RHFfk+LGFxs2oY6L6bek3yI9a6QX0NJ3DEyRqRERdOBERAREQEREBERAREQEREBERAXPXLJjPP4jzbTdkDeaHpHV59unqW8tpMVbTUs07j1GEjvduaPauWXSulldI43LnFxJ7yvDPbUaWOPXc7S+Fx6BTkY0UbQx2AUm0aL53PbdmxjjUJHCfxvUsuZtwR23Ht0WHhO93qWa9dYJTdqaondTVUczNHRyNeD3tP7F1thFe2eCKdnVkY2QesXt8FyvtjR2kf4k+o6jzW3f3P8AtDztG+keenAbtvv5t32H9Zb/AB7bpDI5NdWbWREVhVEREBERAREQEREBERAREQEReNZUtjjfI7qtaXHwAug1Py449+Do2H/qSW9wPq81rDDafW6zMdrnVNRLM7e9xI7hfRZeG06yeXn7tTj4tQzKaHRZgiXpBEsoRLBvk6tKtXzhjbF3gs8xryomdI+H2KRay6sce23N4UnbPD7hr7bxkPiNR7j7lX+TzGzQYlFITZjjzb+9rtD9vqWyMXos8T28bZh4hajxqlsSRoQbhbHFyatqflQz49xt1+x4IBBuCLg9oO5fSpXJHj3yvDosxvJF807t06vu09Suq04ZcxqRERSgREQEREBERAREQEREBUnlaxTmaEsB6UzhH9Eau+Cuy0xyzYhnq44RujjDj6T9fKy881vTSZeuGvqvDX9Oy5VioYtFD0LNVY6Ri+b5d/ht4asyCNZGRfkTV7uGiyLW6rkQ+aZvSClGMUdTjpDxUzGzRXeHPd5ZWLIxax2uocsr28L3HgdR5rak7VSdvKbVj+1tvW0/YVqVnUxKraOj95AsX5usmpXHoyNzAfnDX73tW/1ybsxXGmxKmlGgEgB8Cf2LrFrrgEbjqtvHO67Y+aurP1ERdvIREQEREBERAREQEREBc7be1XOYhVO3gSZB4NAb8CuiHGwJ7NVy/ic2eeVx/Gke72uJVblT7VnjR7pll4e1WGmCgMPU/TlfM8ru2sXZIRL3O5Y8RXuTos23dah+w9YeKnYhooCJ3SHiFPxq/wAGOsvHM+Jmqr7bQ3p2nsfb2j9itcp0UBtW29JJ3Fp961vT0lUmWmsROV7XDg4H2ELrHZaq52jppP60TPaBY+S5NxfiumeSqfPhdN3At9h/atTjz7WbyY6raiIrCqIiICIiAiIgIiICIiDxqz82/wBF3kVy051zftN11NU9R1/6p8lT2bC4WR/JGep04/1LxzYpyRGnvhyRTe2nsPKnaZy2MNjMPb1aYD6c/wB5fQ2YoxuhH15vvLKy/i8l56THlfpzqV+JUaJy9nO0V4Zs5Sfkv0pfvL1GzlJ+S/Sl+8qk/hM3/VfP09v8lj/U+Ptr9jtR4qwxPVhGzNH+S/Tl+8soYLT/AJP9KT7VY4/4vLjmdzHn6cZOfjt2ifH2qUz1CbQO/gs3o/FbGdglOfxP0pPtWJV7NUj2OY+IlrhYjPML+sOuFejiX/cPCeVT9S5fxY710byKuvhUXpO+CwKjkzwk76Yn/Hq/vq4bI4XDTU/M07MkbXGzcz32uBxcSVcx09MaVMt4t2TSIi9HgIiICIiAiIgIiICIiDzqeo7wPkoyMqSquo7wKi41MJh9uK8yvorCxWtEMUkpBIY0uyje4jc0d5NgPFQlH7SbVQUTQZCXSO6sTbZnd5vo1vefVc6L52drK6pjFRJzUEb2ExQhjpH62LJJJS7UEX6IaN4PcqPg+yFRW1TqmskaY+dDnNHSMgaQREGnRkdsrddbXAGuZbcYkinnF66KRzZnMsGt0LY7EkElwLbHLuHA6Hhqp7DsdDnNjnbzcjiWt1OR5F9Gk2IJsSAd/AmxTGcLMmWSPSRu7UtzC97Ejv8AVvHHSsVUN2lkjbaBpbYs3EnMCbuGuvWNradqOujYC83qJ2UxJ00JEhvLE8wSO/rEBrmP3DVzHscbaXLhwUs9Q5YkyzcI6h9I+QWHMszCOofSPkFJPZnIiI5EREBERAREQEREBERB5VXUd4FRUalavqO8CoiMqYTA6TpWsd183Djp46KtbeVJbTOAYXWfTu01JvOywA7iAVZnFRe0eH/KKaWIWDnC7SdwkaQ6Mnwe1qhKN2IJEVy0/OPfvDrtydHpXHEg/tVsa7W3ifZb7fctYYVWSAZmFzHXs5ovdrgcpY4btCCPUfXc8AxwS2Y8WksOzpaAndoDxtrpqkpWAO1tbgTfwtp71hY0WCJ5czNZpsbDQnQAE7jfX1LNaVTduNsIoM1MGGSUtBcL5WMDrFpJ3l1rGw07TwSEPvYZ8glqecIcCyncC0Fov88x1+1xLL6AaEDhc2+V27TebeGirXJ+S+CScggTSEtabaMYBG0aDta4nvLlZXpPdLFmWZg/UPpfALCmKy8F6r/S+ARE9kiiIjkREQEREBERAREQEREHjV9R/gVDxlS9b+Df6JULGUdQ8sUqHRwyvYAXtje9odexc1pIBtwuFiYDjEdXTxVEXUkaHW4tO5zT3hwIv3Lz2olc2mlytzEty211DtDu13FUzYCV9PDLHTwy1MfPPPQkpRzRysHN/OSNN/xrgW6Q43TadLTjGz2d5mgIbKdHB18kmmUONuq8DTNY3GhG4thJG1UL2P5iQvDxYWztHbd0YOluPadVPNxup/5dU/Xw3/7quRbU10ji2KON0rucAp8rC+LJzfX+daCWhxvZ7rlzbiPUDmZiJjfymNzC0120j46fnBTSOkyk830GsaRxlmeWtjZuNzY24LWuB4PNX1Dryc45xzTVIByMvxbcDM4gaAANHDM3pDOm2bxOpla7EG1EkYN+bhNC0X39FrpQyP0rPd3jer7hMrqeNsUGGVDI27gH0GpO9ziZyXOO8uNyeJXUdESsFFSsijZFGMrGNDGjsAFhrx8V9PKjBik+n8BmGtrmShsO82lK9osRY821BuW2docw1LbcDbWx3jUXGqgfU5WZgnVf6XwCwJys3Aeq/wBL4KUT2SiIiORERAREQEREBERAREQeFefm3+iVAxlTuIfgn+iVX40dQxceP8GnsC481JZrQS5xyOsGgakk8FD7BbPmio44n2513zspH5R1tPogNb2aE8VY3FeZciXsx4va4v2XF/YvWNrLkgNvuJGW/g4+rj2KMEZdJmczRtxG4Ft2lzbOlNz1rEtFgSBm1s4geJonmMsyD+SyU4ALQyQkMAz2N27jbfbM/XdcLExfeYKHbRF0ZiccoLpHZxYkuLy5kjQCMpBIfbcC0AaapLSyvjmzWa+SNjcoLS3OGkO1tfLc+xEJklRv/DIG58kbW53mV+UBuaQ73uI1zaDXes97tT4rwkcomInumGK8WAFybAC7jcm3Enie9SOz56L/AEh5KMmKkdnOrJ6Q8lJPZMIiI4EREBERAREQEREBERBH7RVBjpKmQAEshkkAOgJY0uAPdotHU3La3+coT4sm+BZ8Vura8/xfW/8AjT/+ty40KJbsbyz0h61NOPAxO8yF9fvw0HGGpH0YD/uLSCIbb2j5XsO4sqR4xxfCRe7OV7DP7x/ls++tBIht0E3lhwz+8f5bfvrKj5WMPO5tR/lxjzeudG7wpqkK6rGzbeR5VaHhFUn6EA85Fh1HK5Rhpd8mqbDt+TjykK1I1yxMQd8071ean0wlsyq5aKfXm6SU+lJG3yBWyeSvH/l1I6o5sR3kLModn6oHGw8lyeukv3PJ/ix//ff5NXCNtooiIgREQEREBERAREQEREHjWUzZY3xvvke0sdYlps4WNiNRvWjtp+Qd46WHT5xf8FNZpA7pBofWAt7og5cl5G8Zb/MMd6MsXxKwp+SzGW76N572uid5OXWCIORHcneLD+gz/UK+f3v8W/sFR9Qrr1EHIQ5P8W/sFR9QrLh2Cxo9Whm9bWt8yuskU7HLEfJ1jp/ojx4upx/qWW3khxt4s6KMDfrLEPJdOIm5HPGBchNY97flkscUd+kGOzvI/N0sD4reWzOAQUNOympwcjbm7jdznHe5x0Fz3ABSqKAREQEREBERB//Z",
+         icon:"data:image/png;base64,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",
+         article1:"Article",
+    article2:"000123",
+    country1:"Country",
+    country2:"Armenia",
+    region1:"Region",
+    region2:"Armenia",
+     manufacturer1:"Manufacturer",
+    manufacturer2:"Areni",
+    color:"color white",
+    type:"Type Dry",
+    Volume:"Valume 750ml",
+    Alkohol:"Alcohol 55%",
+    price:"6,75",
+    Description:"Description",
+    text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",   
+    },
+    {
+        name:"“Tushpa” white wine", 
+        persent: "Alc 55% 0.75l",
+        url: "wino7.png",
+       oldprice:"9,55 ",
+        sale:"10%",
+        img:"data:image/jpeg;base64,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",
+         icon:"data:image/png;base64,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",
+         article1:"Article",
+    article2:"000123",
+    country1:"Country",
+    country2:"Armenia",
+    region1:"Region",
+    region2:"Armenia",
+     manufacturer1:"Manufacturer",
+    manufacturer2:"Areni",
+    color:"color white",
+    type:"Type Sweet",
+    Volume:"Valume 750ml",
+    Alkohol:"Alcohol 55%",
+    price:"7,50",
+    Description:"Description",
+    text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",   
+    },
+    {
+    name:"“Areni” Qotot red wine", 
+    persent: "Alc 55% 0.75l",
+    url: "wino8.png",
+    oldprice:"9,55 ",
+    sale:"10%",
+    img:"data:image/jpeg;base64,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",
+     icon:"data:image/png;base64,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",
+     article1:"Article",
+    article2:"000123",
+    country1:"Country",
+    country2:"Armenia",
+    region1:"Region",
+    region2:"Armenia",
+     manufacturer1:"Manufacturer",
+    manufacturer2:"Areni",
+    color:"color red",
+    type:"Type Sweet",
+    Volume:"Valume 750ml",
+    Alkohol:"Alcohol 55%",
+    price:"7,50",
+    Description:"Description",
+    text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",   
+    },
+    {
+    name:"“Karas” red wine", 
+    persent: "Alc 55% 0.75l",
+    url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQen4f2T6czenr1OnfEvvYhn2dktwOxl6VYd9ap3rwn463tSFouuSs-ZEp0kIUK-R7fcmI&usqp=CAU",
+    oldprice:"9,55 ",
+         img:"data:image/jpeg;base64,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",
+    sale:"10%",
+    icon:"data:image/png;base64,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",
+    article1:"Article",
+    article2:"000123",
+    country1:"Country",
+    country2:"Armenia",
+    region1:"Region",
+    region2:"Armenia",
+     manufacturer1:"Manufacturer",
+    manufacturer2:"Areni",
+    color:"color red",
+    type:"Type Sweet",
+    Volume:"Valume 750ml",
+    Alkohol:"Alcohol 55%",
+    price:"5,99",
+    Description:"Description",
+    text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.Suspendisse a venenatis ex. Praesent ut diam sit amet ipsum hendrerit lacinia nec ut turpis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed sollicitudin lacus sed quam laoreet, et elementum diam varius. Etiam eu placerat libero.  ",   
+    }
+    
+]
+
+
+
+
+
+//*zambyuxi hamar vor 0 ga sa greluc zambuxi koxkin 0 klini
+let x=0
+   oo.innerHTML=x
+
+for(i=0;i<arr.length;i++){
+    let container2=document.createElement('div')
+   dv3.appendChild(container2)
+    container2.style.width="250px"
+    container2.style.height="410px"
+    container2.style.border="1px solid #E8E7E5"
+    container2.style.float="left"
+    container2.setAttribute("class","d1")
+
+   
+    let obj=document.createElement('span')
+    container2.appendChild(obj)
+obj.innerHTML=arr[i].name
+obj.style.width="200px"
+obj.style.height="100px"
+obj.style.fontFamily='Gabriola'
+obj.style.color="#A40D30"
+obj.style.fontSize="24px"
+obj.style.lineHeight="135%"
+obj.style.fontWeight="bold"
+
+let obj1=document.createElement('span')
+    container2.appendChild(obj1)
+obj1.innerHTML=arr[i].persent
+obj1.style.width="100px"
+obj1.style.height="50px"
+obj1.style.fontFamily='Futura Bk BT'
+obj1.style.color="grey"
+obj1.style.fontSize="14px"
+obj1.style.lineHeight="135%"
+obj1.style.fontWeight="bold"
+
+
+
+let obj2=document.createElement('img')
+    container2.appendChild(obj2)
+obj2.src=arr[i].url
+
+/* 5astxer*/
+let line=document.createElement('div')
+    container2.appendChild(line)
+    line.style.width="200px"
+    line.style.borderBottom="1px solid #e9e3e3"
+  
+
+let dd=document.createElement('div')
+    container2.appendChild(dd)
+   dd.style.width="100px"
+    dd.style.height="30px"
+    dd.style.marginRight="100px"
+let obj4=document.createElement('span')
+   dd.appendChild(obj4)
+   obj4.innerHTML=arr[i].oldprice
+obj4.style.height="30px"
+obj4.style.fontSize="15px"
+obj4.style.color="grey"
+obj4.style.textDecoration="line-through"
+let obj6=document.createElement('span')
+dd.appendChild(obj6)
+obj6.innerHTML=arr[i].sale
+obj6.style.width="50px"
+obj6.style.fontSize="15px"
+obj6.style.background="#A40D30"
+ 
+let obj5=document.createElement('span')
+container2.appendChild(obj5)
+obj5.innerHTML=arr[i].price+"$"
+obj5.style.width="200px"
+obj5.style.height="30px"
+obj5.style.fontSize="20px"
+
+
+
+//*create enq arel zambyux u zambyuxi vra cliciq verevi zambyuxum avelanum e
+let icondiv=document.createElement('div')
+icondiv.style.width="40px"
+icondiv.style.height="100px"
+icondiv.style.marginLeft="190px"
+container2.appendChild(icondiv)
+let icon=document.createElement('img')
+icon.style.width="30px"
+icon.style.height="30px"
+icondiv.appendChild(icon)
+icon.src=arr[i].icon
+icon.onclick=function(){
+    x++
+oo.innerHTML=x
+}
+
+
+//*gini clickic galisa ira masin texekutyun
+for(k=0;k<arr.length;k++){
+    let k1=document.createElement('div')
+    k1.style.width="50%"
+    k1.style.height="700px"
+    
+
+let foto=document.createElement('img')
+    k1.appendChild(foto)
+foto.src=arr[i].img 
+foto.style.width="500px"
+foto.style.height="600px"
+
+let k2=document.createElement('div')
+    k2.style.width="50%"
+    k2.style.height="700px"
+    k2.style.float="left"
+k1.appendChild(k2)
+
+let nn=document.createElement('div')
+    k2.appendChild(nn)
+nn.innerHTML=arr[i].name
+nn.style.width="100%"
+nn.style.height="70px"
+nn.style.fontFamily='Gabriola'
+nn.style.color="#A40D30"
+nn.style.fontSize="56px"
+nn.style.lineHeight="100%"
+nn.style.fontWeight="bold"
+nn.style.paddingLeft="70px"
+
+
+let article=document.createElement('div')
+   k2.appendChild(article)
+   article.style.width="300px"
+   article.style.height="30px"
+   article.style.paddingLeft="70px"
+   let art1=document.createElement('span')
+   article.appendChild(art1)
+   art1.innerHTML=arr[i].article1
+art1.style.height="30px"
+art1.style.fontSize="15px"
+art1.style.color="grey"
+let art2=document.createElement('span')
+article.appendChild(art2)
+art2.innerHTML=arr[i].article2
+art2.style.width="50px"
+art2.style.fontSize="15px"
+art2.style.paddingLeft="20px"
+
+let country=document.createElement('div')
+   k2.appendChild(country)
+   country.style.width="300px"
+   country.style.height="30px"
+   country.style.paddingLeft="70px"
+   let coun1=document.createElement('span')
+   country.appendChild(coun1)
+   coun1.innerHTML=arr[i].country1
+coun1.style.height="30px"
+coun1.style.fontSize="15px"
+coun1.style.color="grey"
+let coun2=document.createElement('span')
+country.appendChild(coun2)
+coun2.innerHTML=arr[i].country2
+coun2.style.width="50px"
+coun2.style.fontSize="15px"
+coun2.style.paddingLeft="20px"
+
+let region=document.createElement('div')
+   k2.appendChild(region)
+   region.style.width="300px"
+   region.style.height="30px"
+   region.style.paddingLeft="70px"
+   let reg1=document.createElement('span')
+   region.appendChild(reg1)
+ reg1.innerHTML=arr[i].region1
+reg1.style.height="30px"
+reg1.style.fontSize="15px"
+reg1.style.color="grey"
+let reg2=document.createElement('span')
+region.appendChild(reg2)
+reg2.innerHTML=arr[i].region2
+reg2.style.width="50px"
+reg2.style.fontSize="15px"
+reg2.style.paddingLeft="20px"
+
+
+let manufacturer=document.createElement('div')
+   k2.appendChild(manufacturer)
+   manufacturer.style.width="300px"
+   manufacturer.style.height="30px"
+   manufacturer.style.paddingLeft="70px"
+   let manuf1=document.createElement('span')
+   manufacturer.appendChild(manuf1)
+   manuf1.innerHTML=arr[i].manufacturer1
+   manuf1.style.height="30px"
+   manuf1.style.fontSize="15px"
+   manuf1.style.color="grey"
+let manuf2=document.createElement('span')
+manufacturer.appendChild(manuf2)
+manuf2.innerHTML=arr[i].manufacturer2
+manuf2.style.width="50px"
+manuf2.style.fontSize="15px"
+manuf2.style.paddingLeft="20px"
+
+let dd=document.createElement('div')
+    k2.appendChild(dd)
+   dd.style.width="250px"
+    dd.style.height="30px"
+    dd.style.paddingLeft="70px"
+let obj4=document.createElement('span')
+   dd.appendChild(obj4)
+   obj4.innerHTML=arr[i].oldprice +"$"
+obj4.style.height="30px"
+obj4.style.fontSize="15px"
+obj4.style.color="grey"
+obj4.style.textDecoration="line-through"
+let obj6=document.createElement('span')
+dd.appendChild(obj6)
+obj6.innerHTML=arr[i].sale
+obj6.style.width="50px"
+obj6.style.fontSize="15px"
+obj6.style.background="#A40D30"
+obj6.style.paddingLeft="20px"
+
+
+let price2=document.createElement('div')
+k2.appendChild(price2)
+price2.innerHTML=arr[i].price+"$"
+price2.style.width="200px"
+price2.style.height="60px"
+price2.style.fontSize="40px"
+price2.style.paddingLeft="70px"
+ 
+let btn=document.createElement('button')
+k2.appendChild(btn)
+btn.style.width="138px"
+btn.style.height="40px"
+btn.style.border="1px solid  #A40D30"
+btn.style.color="white"
+btn.style.background="#A40D30"
+btn.style.fontSize="20px"
+btn.style.marginLeft="70px"
+btn.innerHTML="Add to cart"
+
+
+let text1=document.createElement('div')
+k2.appendChild(text1)
+text1.innerHTML=arr[i].Description
+text1.style.width="200px"
+text1.style.height="50px"
+text1.style.fontSize="30px"
+text1.style.paddingLeft="70px"
+
+let text=document.createElement('div')
+k2.appendChild(text)
+text.innerHTML=arr[i].text
+text.style.width="660px"
+text.style.height="200px"
+text.style.fontSize="16px"
+text.style.paddingLeft="70px"
+text.style.color="rgba(139, 138, 136, 1)"
+
+
+// Add to carti qlikic @ntrvi ayn diver voronq zambyuxi mej qlic enq arel
+let cart=document.createElement('div')
+cart.style.width="100%"
+cart.style.height="1000px"
+cart.style.border="1px solid"
+ 
+
+    container2.onclick=function(){
+        container_2div.appendChild(k1) 
+        container_2div.appendChild(k2) 
+        dv2.style.display="none"
+        dv3.style.width="100%"
+    }
+    btn.onclick=function(){
+        container_3div.appendChild(cart)
+        container_2div.style.display="none"
+        dv3.style.display="none"
+    }
+  // ????zambyuxin click aneq mec divum tpi
+
+  icondiv.onclick=function(){
+    let container5=document.createElement('div')
+    container5.style.width="200px"
+    container5.style.height="380px"
+    cart.appendChild(container5)
+    container5.innerHTML=container2.innerHTML
+    container5.onclick=function(){
+this.remove()
+}
+}
+}
+}
+
+/*rangi ashxatel@*/
+function f2(){
+   range.value= inp_1_1.value
+
+    }
+  
+   
+    
+
+
+
+
+
+/*menu i responsi hamar*/
+    let mainListDiv = document.getElementById("mainListDiv"),
+    mediaButton = document.getElementById("mediaButton");
+
+mediaButton.onclick = function () {
+    
+    "use strict";
+    
+    mainListDiv.classList.toggle("show_list");
+    mediaButton.classList.toggle("active");
+};
+ 
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="JS Sayt.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.nav{
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    line-height: 65px;
+    text-align: center;
+    background: white;
+    z-index: +1;
+}
+
+.nav div.main_list{
+    width:100%;
+    height: 65px;
+    box-shadow: 0px 0px 10px 0px grey;
+}
+
+.nav div.main_list ul{
+    width:100%;
+    height: 65px;
+    display: flex;
+    list-style: none;
+}
+
+.nav div.main_list ul li{
+    width: 160px;
+    height: 65px;
+    
+}
+
+.nav div.main_list ul li a{
+    text-decoration: none;
+    color:black;
+    font-family: 'Gabriola';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 51px;
+}
+
+
+.nav div.main_list ul li a:hover{
+    color: #c0c0c0;
+}
+
+.nav div.media_button {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    display: none;
+}
+
+.nav div.media_button button.main_media_button {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.nav div.media_button button.main_media_button span{
+    width: 98%;
+    height: 1px;
+    display: block;
+    background-color: #fff;
+    margin-top: 9px;
+    margin-bottom: 10px;
+}
+
+.nav div.media_button button.main_media_button:hover span:nth-of-type(1){
+     transform: rotateY(180deg);
+    transition: all 0.5s; 
+     background-color: #c0c0c0; 
+}
+ 
+.nav div.media_button button.main_media_button:hover span:nth-of-type(2){
+    transform: rotateY(180deg);
+    transition: all 0.4s;
+    background-color: #c0c0c0;
+}
+
+.nav div.media_button button.main_media_button:hover span:nth-of-type(3){
+    transform: rotateY(180deg);
+    transition: all 0.3s;
+    background-color: #c0c0c0;
+}
+
+  .nav div.media_button button.active span:nth-of-type(1) {
+    transform: rotate3d(0, 0, 1, 45deg);
+    position: absolute;
+    margin: 0;
+}  
+
+ .nav div.media_button button.active span:nth-of-type(2) {
+    display: none;
+} 
+ .nav div.media_button button.active span:nth-of-type(3) {
+    transform: rotate3d(0, 0, 1, -45deg);
+    position: absolute;
+    margin: 0;
+}
+
+.nav div.media_button button.active:hover span:nth-of-type(1) {
+    transform: rotate3d(0, 0, 1, 20deg);
+}
+
+.nav div.media_button button.active:hover span:nth-of-type(3) {
+    transform: rotate3d(0, 0, 1, -20deg);
+}  
+.ul_2{
+    text-decoration: none;
+    color: black;
+    font-family: 'Gabriola';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 51px;
+}
+#i2{
+    width: 150px;
+}
+#container{
+    display: flex;
+    flex-direction: row;
+}
+#container1{
+    width: 50%;
+    height: 567px;  
+    background-image: url("fon2.png");
+background-size: auto;
+
+
+}
+#container2{
+    width: 50%;
+    height: 567px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+#container2_item1{
+height: 400px;
+display: flex;
+justify-content: space-around;
+align-items: center;
+flex-direction: column;
+}
+.inp{
+width: 400px;
+height: 46px;
+padding:12px 16px 12px 16px;
+outline: none;
+}
+#container2_item2{
+    width: 400px;
+    height: 70px;
+    font-family: 'Gabriola';
+    font-size: 40px;
+    line-height: 68px;
+    color:rgba(164, 13, 48, 1)
+
+}
+#btn2{
+    width: 165px;
+    height: 40px;
+    background-color: rgba(164, 13, 48, 1);
+font-size: 16px;
+color: white;
+border: 0px;
+}
+a:visited {
+  color: red;
+}
+@media screen and (min-width: 250px) and (max-width: 768px) {
+    
+  
+    
+    .nav div.main_list{
+        width: 100%;
+        margin-top: 65px;
+        height: 0px;
+        overflow: hidden;
+    }
+    
+    .nav div.show_list{
+        height: 200px;
+    }
+    
+    .nav div.main_list ul{
+        flex-direction: column;
+        width: 100%;
+        height: 200px;
+        top: 80px;
+        right: 0;
+        left: 0;
+    }
+    
+    .nav div.main_list ul li{
+        width: 100%;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.6)
+    }
+    
+    .nav div.main_list ul li a{
+      text-align: center;
+        line-height: 40px;
+        width: 100%;
+        height: 40px;
+        display: table;
+    }
+
+    
+    .nav div.media_button{
+        display: block;
+    }
+    #container{
+        flex-direction: column;
+    }
+    #container1{
+        width: 100%;
+    }
+    #container2{
+        width: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    
+            
+            <nav class="nav">
+
+            <div class="main_list" id="mainListDiv">
+                <ul>
+                    <li><a href="JS Sayt.html">Brands</a></li>
+                    <li><a href="4rd ej.html">Products</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Special offers</a></li>
+                    <li><a href="#">B2B offers</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <ul id="i2">
+                   <li> <i class="fa fa-search" style="font-size:21px"></i></li>
+                   <li><i class="fa fa-user-o" style="font-size:21px"></i></li>
+                   <li><i class="fa fa-cart-plus" aria-hidden="true"style="font-size:21px"></i></li>
+</ul>
+</ul>
+            </div>
+            <div class="media_button">
+                <button class="main_media_button" id="mediaButton">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            
+        </div>
+
+    </nav>
+    <div id="container">
+    <div id="container1"></div>
+    <div id="container2">
+        <div id="container2_item1">
+            <p id="container2_item2">Login</p>
+    
+    <input class="inp" id="inp1" placeholder="Email" />
+    <p id="text1"></p>
+    <input class="inp" id="inp2" placeholder="Password" />
+    <p id="text2"></p>
+
+    <input type="checkbox" value="lsRememberMe" id="rememberMe"> <label for="rememberMe">Remember me</label>
+  
+    <button id="btn2">Login</button>
+    <p id="text5">Don’t have an account yet?<a href="Registration.html" > Register</a></p>
+        </div>
+    </div>
+</div>
+<script>
+    //Checkbox
+// const rmCheck = document.getElementById("rememberMe"),
+//     emailInput = document.getElementById("email");
+
+// if (localStorage.checkbox && localStorage.checkbox !== "") {
+//   rmCheck.setAttribute("checked", "checked");
+//   emailInput.value = localStorage.username;
+// } else {
+//   rmCheck.removeAttribute("checked");
+//   emailInput.value = "";
+// }
+
+    // LOGIN
+     
+    
+    btn2.onclick=function(){
+    let k1=document.getElementById('inp1').value;
+    let k2=document.getElementById('inp2').value;
+  
+    
+    
+    if(k1==""){
+        text1.innerHTML="Please fill out this field"
+        text1.style.color="red"
+        text1.style.width="390px"
+        inp1.style.border="1px solid red"
+       inp1.style.boxShadow="2px 2px 11px 0px red"
+    }
+    else{
+        inp1.style.border="1px solid green"
+       inp1.style.boxShadow="2px 2px 11px 0px green" 
+    }
+    if(k2==""){
+        text2.innerHTML="Please fill out this field"
+        text2.style.color="red"
+        text2.style.width="390px"
+        inp2.style.border="1px solid red"
+       inp2.style.boxShadow="2px 2px 11px 0px red"
+    }
+    
+    else if (k2.length<7 || k2.length>15){
+        text2.innerHTML="Please lengthen this text to 7 characters or more."
+        text2.style.color="red"
+        text2.style.width="390px"
+        inp2.style.border="1px solid red"
+       inp2.style.boxShadow="2px 2px 11px 0px red"
+    }
+    else if(k2.length>7){
+        text2.innerHTML=" "
+        inp2.style.border="1px solid green"
+       inp2.style.boxShadow="2px 2px 11px 0px green"
+    }
+   
+   //checkbox
+//     if (rmCheck.checked && inp1.value !== "") {
+//     localStorage.username = inp1.value;
+//     localStorage.checkbox = rmCheck.value;
+//   } else {
+//     localStorage.username = "";
+//     localStorage.checkbox = "";
+//   }
+}
+
+
+
+    let mainListDiv = document.getElementById("mainListDiv"),
+    mediaButton = document.getElementById("mediaButton");
+
+mediaButton.onclick = function () {
+    
+    "use strict";
+    
+    mainListDiv.classList.toggle("show_list");
+    mediaButton.classList.toggle("active");
+};
+ 
+
+
+
+</script>
+</body>
+</html>
+

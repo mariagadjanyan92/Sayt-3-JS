@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+
+
+
+/* The dots/bullets/indicators */
+/* .dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+} */
+
+/* Fading animation */
+/* .fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+} */
+
+/* @keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+} */
+    </style>
+</head>
+<body>
+  
+<!-- Slideshow container -->
+<div id="container">
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 10</div>
+    <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Glass_of_Red_Wine_with_a_bottle_of_Red_Wine_-_Evan_Swigart.jpg/280px-Glass_of_Red_Wine_with_a_bottle_of_Red_Wine_-_Evan_Swigart.jpg" style="width:100%"> -->
+    <!-- <img src="https://img.passeportsante.net/1200x675/2021-05-03/i102200-vin.webp" style="width:100%"> -->
+    <!-- <div class="text">Caption Text</div> --> 
+  
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+</div>
+
+<!-- The dots/circles -->
+<!-- <div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div> -->
+    <script>
+        let arr=[
+        {
+          
+      url: "data:image/jpeg;base64,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",
+      name: "Ваш товар",
+      price: " 1 150,00",
+    },
+    {
+      url: "data:image/jpeg;base64,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",
+      name: "Ваш товар",
+      price: " 1 150,00",
+    },
+    {
+          
+          url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIpTnwrRt_LBqjMROUrWhONoLEOz75qA_6hVfwGw-KcIxhFvn8bVdLrWlGOYbmv56nnPY&usqp=CAU",
+          name: "Ваш товар",
+          price: " 1 150,00",
+        },
+        {
+          url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThqNOn0zOTlfbmFJdwzHwuXD0wC6t47WuOb_-MJ8JUDxh8mUP8fnY_1BjkIH9d4PTGRXc&usqp=CAU",
+          name: "Ваш товар",
+          price: " 1 150,00",
+        },
+        {
+          
+          url: "https://www.armenianbrandyandwine.com/140-home_default/armenia-wine-vin-rose-sec-125-alc.jpg",
+          name: "Ваш товар",
+          price: " 1 150,00",
+        }
+        
+        
+      ]
+      for (i = 0; i < arr.length; i++) {
+        let ll = document.createElement("div");
+    ll.style.width = "300px";
+    ll.style.height = "500px";
+  
+    document.body.appendChild(ll)
+    ll.style.float="left";
+    let img=document.createElement('img')
+    ll.appendChild(img)
+    img.src=arr[i].url
+    img.setAttribute('class','mySlides fade')
+      }
+      
+        let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = arr[i];
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 500); // Change image every 2 seconds
+}
+// let slideIndex = [1,1];
+// /* Class the members of each slideshow group with different CSS classes */
+// let slideId = ["mySlides1", "mySlides2"]
+// showSlides(1, 0);
+// showSlides(1, 1);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+// function showSlides(n, no) {
+//   let i;
+//   let x = document.getElementsByClassName(slideId[no]);
+//   if (n > x.length) {slideIndex[no] = 1}
+//   if (n < 1) {slideIndex[no] = x.length}
+//   for (i = 0; i < x.length; i++) {
+//     x[i].style.display = "none";
+//   }
+//   x[slideIndex[no]-1].style.display = "block";
+// }
+
+
+    </script>
+    
+</body>
+</html>
